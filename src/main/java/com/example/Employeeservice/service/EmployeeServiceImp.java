@@ -23,10 +23,10 @@ public class EmployeeServiceImp implements EmployeeService {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Value("http://localhost:8101/departments/")
+    @Value("${deparmentInfoAPI}")
     private String baseUrlforDepartment;
 
-    @Value("http://localhost:8102/projects/employeeid/")
+    @Value("${projectInfoAPI}")
     private String baseUrlforProject;
 
 
@@ -83,4 +83,5 @@ public class EmployeeServiceImp implements EmployeeService {
         List<Employee> employeebyProjectIdList = repo.findByProjectId(projectId);
         return employeebyProjectIdList;
     }
+
 }
