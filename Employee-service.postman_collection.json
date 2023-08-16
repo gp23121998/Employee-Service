@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "c2857869-e8eb-4ebc-b681-df3fcb90229b",
+		"name": "Employee-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29012323"
+	},
+	"item": [
+		{
+			"name": "getEmployee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/employee/emp/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"employee",
+						"emp",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createEmployee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"employeeId\":1,\n    \"employeeName\":\"Gayatri\",\n    \"employeeEmail\":\"gp@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8100/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteEmployee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/employee/emp/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"employee",
+						"emp",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getallEmployee",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "updateEmployee",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"employeeId\":1,\n    \"employeeName\":\"Gayatri patel\",\n    \"employeeEmail\":\"gp@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8100/employee/emp/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"employee",
+						"emp",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEmployeeByDepartmentId",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getEmployeeByProjectId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/employee/emp-pro/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"employee",
+						"emp-pro",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
