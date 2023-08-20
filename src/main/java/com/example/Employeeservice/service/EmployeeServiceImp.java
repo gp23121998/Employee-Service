@@ -5,10 +5,12 @@ import com.example.Employeeservice.repository.EmployeeRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.example.Employeeservice.exception.ResourceNotFoundException;
 import org.springframework.web.client.RestTemplate;
+import com.example.Employeeservice.exception.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,13 +31,17 @@ public class EmployeeServiceImp implements EmployeeService {
     @Value("${projectInfoAPI}")
     private String baseUrlforProject;
 
-
     @Override
     public Employee getEmployeeById(int id)  {
         Employee employee = repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Employee", "ID", id));
         //get department
-        ResponseEntity<Department> departmentResponseEntity = restTemplate.getForEntity(baseUrlforDepartment+employee.getDepartmentId(), Department.class);
+
+            ResponseEntity<Department> departmentResponseEntity =
+                    restTemplate.getForEntity(baseUrlforDepartment + employee.getDepartmentId(), Department.class);
+
         ArrayList projectList = restTemplate.getForEntity(baseUrlforProject + employee.getEmployeeId(), ArrayList.class).getBody();
+
+
         employee.setDepartment(departmentResponseEntity.getBody());
         employee.setProjects(projectList);
         return employee;

@@ -8,7 +8,6 @@ import lombok.ToString;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 public class Department {
     private int departmentId;
     private int employeeId;
